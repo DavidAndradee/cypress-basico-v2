@@ -1,0 +1,88 @@
+[1mdiff --git a/README.md b/README.md[m
+[1mindex f6d309b..06797e9 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -1,29 +1,38 @@[m
+[31m-# Testes automatizados com Cypress - Básico[m
+[32m+[m[32m# cypress-bascio-v2[m
+ [m
+[31m-👋 Seja bem-vindo(a)![m
+[32m+[m[32mSample project fr the basic course of the Talking About Testing online school.[m
+ [m
+[31m-É muito bom tê-lo(a) aqui. Tenho certeza que você vai adorar este curso. ❤️[m
+[32m+[m[32m## Pre-requirements[m
+ [m
+[31m-## O que você vai aprender[m
+[32m+[m[32mIt is required to have Node.js and npm installed to run this project.[m
+ [m
+[31m-Durante o curso de testes automatizados com Cypress (básico), você vai aprender:[m
+[32m+[m[32m> I used versions `v16.13.2` and `8.1.2` of Node.js and npm, respectively. I suggest you use the same or later versions.[m
+ [m
+[31m-- Como configurar um projeto Cypress do zero[m
+[31m-- Como visitar páginas locais e remotas[m
+[31m-- Como lidar com os elementos mais comuns encontrados em aplicações web[m
+[31m-- Como testar _upload_ de arquivos[m
+[31m-- Como realizar as mais diversas verificações de resultados esperados[m
+[31m-- Como criar comandos customizados[m
+[31m-- Como lidar com links que abrem em outra aba do navegador[m
+[31m-- Como rodar testes simulando as dimensões de um dispositivo móvel[m
+[31m-- Como resolver os mesmos problemas de diferentes formas, conhecendo a [API do Cypress](https://docs.cypress.io/api/table-of-contents)[m
+[31m-- Como executar os testes em um _pipeline_ de integração contínua sempre que mudanças ocorrerem no código da aplicação (ou dos testes)[m
+[31m-- Como criar uma documentação mínima para seu projeto de testes automatizados[m
+[32m+[m[32m## Installation[m
+ [m
+[31m-## Vamos começar?[m
+[32m+[m[32mRun `npm install` (or `npm i` for the short version) to install the dev dependencies.[m
+ [m
+[31m-Vá para a seção [estrutura do curso](./lessons/_course-structure_.md).[m
+[32m+[m[32m## Tests[m
+[32m+[m
+[32m+[m[32mYou can run testes simulating a desktop or ombili viewport.[m
+[32m+[m
+[32m+[m[32m### Desktop[m
+[32m+[m
+[32m+[m[32mRun `npm test` (or `npm t` for the short version) to run the test in headless mode on a desktop viuewport.[m
+[32m+[m
+[32m+[m[32mOr, run `npm run cy:open` to open Cypress in interactive mode on a desktop viuewport.[m
+[32m+[m
+[32m+[m[32m### Mobile[m
+[32m+[m
+[32m+[m[32mRun `npm run test:mobile` to run the test in headless mode on a mobile viuewport.[m
+[32m+[m
+[32m+[m[32mOr, run `npm run cy:open:mobile` to open Cypress in interactive mode on a mobile viuewport.[m
+[32m+[m
+[32m+[m
+[32m+[m[32m## Support this project[m
+[32m+[m
+[32m+[m[32mIf you want to support this project, leave a ⭐.[m
+ [m
+ ___[m
+ [m
+[31m-Este é mais um curso da [**Escola Talking About Testing**](https://udemy.com/user/walmyr).[m
+[32m+[m[32mThis project was created with 💚 by [Walmyr](https://walmyr.dev).[m
+[1mdiff --git a/package.json b/package.json[m
+[1mindex 9550633..d434cd1 100644[m
+[1m--- a/package.json[m
+[1m+++ b/package.json[m
+[36m@@ -4,7 +4,10 @@[m
+   "description": "Repositório da versão 2 do curso básico de Cypress da Escola Talking About Testing",[m
+   "main": "src/index.html",[m
+   "scripts": {[m
+[31m-    "test": "echo \"Error: no test specified\" && exit 1"[m
+[32m+[m[32m    "cy:open": "cypress open",[m
+[32m+[m[32m    "cy:open:mobile": "cypress open --config viewportWidth=410 viewportHeight=860",[m
+[32m+[m[32m    "test":"cypress run",[m
+[32m+[m[32m    "test:mobile" : "cypress open --config viewportWidth=410 viewportHeight=860"[m
+   },[m
+   "repository": {[m
+     "type": "git",[m
+[36m@@ -19,5 +22,8 @@[m
+   ],[m
+   "author": "Walmyr Filho <wlsf82@gmail.com> (https://walmyr.dev/)",[m
+   "license": "MIT",[m
+[31m-  "homepage": "https://github.com/wlsf82/cypress-basico-v2#readme"[m
+[32m+[m[32m  "homepage": "https://github.com/wlsf82/cypress-basico-v2#readme",[m
+[32m+[m[32m  "devDependencies": {[m
+[32m+[m[32m    "cypress": "^9.5.1"[m
+[32m+[m[32m  }[m
+ }[m
